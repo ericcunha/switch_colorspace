@@ -147,6 +147,8 @@ class UI():
             from_cs = cmds.radioButton(sel_rb, q=1, l=1)
             if 'Custom' in from_cs:
                 from_cs = cmds.textField(self.from_field, q=1, text=1)
+            if 'Available' in from_cs:
+                from_cs = cmds.optionMenu(self.avail_om, q=1, v=1)
 
         if not from_cs:
             raise ValueError('From colorspace is not defined!')
